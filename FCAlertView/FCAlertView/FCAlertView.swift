@@ -225,7 +225,7 @@ open class FCAlertView: UIView {
       y: 20.0 + CGFloat(alertViewWithVector * 30),
       width: alertViewFrame.size.width - 30.0,
       height: 20.0))
-    titleLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)
+    titleLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.medium)
     titleLabel.numberOfLines = 1
     titleLabel.textColor = titleColor
     titleLabel.text = title
@@ -237,8 +237,8 @@ open class FCAlertView: UIView {
       y: CGFloat(descriptionLevel + alertViewWithVector * 30),
       width: alertViewFrame.size.width - 50.0,
       height: 60.0))
-    descriptionLabel.font = (title == nil) ? UIFont.systemFont(ofSize: 16, weight: UIFontWeightRegular) :
-      UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight)
+    descriptionLabel.font = (title == nil) ? UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.regular) :
+      UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)
     
     descriptionLabel.numberOfLines = 4
     descriptionLabel.textColor = subTitleColor
@@ -321,7 +321,7 @@ open class FCAlertView: UIView {
                                     height: 45)
       doneButton.setTitle(doneTitle, for: UIControlState())
       doneButton.addTarget(self, action: #selector(donePressed(_:)), for: .touchUpInside)
-      doneButton.titleLabel!.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)
+      doneButton.titleLabel!.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.medium)
       
       
       alertView!.addSubview(doneButton)
@@ -334,7 +334,7 @@ open class FCAlertView: UIView {
       
       otherButton.setTitle(buttonTitles![0], for: UIControlState())
       otherButton.addTarget(self, action: #selector(handleButton(_:)), for: .touchUpInside)
-      otherButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightRegular)
+      otherButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.regular)
       otherButton.tintColor = colorScheme
       otherButton.titleLabel?.adjustsFontSizeToFitWidth = true
       otherButton.titleLabel?.minimumScaleFactor = 0.8
@@ -363,7 +363,7 @@ open class FCAlertView: UIView {
                                       height: 45)
         doneButton.setTitle(doneTitle, for: UIControlState())
         doneButton.addTarget(self, action: #selector(donePressed(_:)), for: .touchUpInside)
-        doneButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium)
+        doneButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium)
         
         let horizontalSeparator = UIView(frame: CGRect(x: alertViewFrame.size.width/2 - 1,
           y: otherButton.frame.origin.y - 2,
@@ -407,7 +407,7 @@ open class FCAlertView: UIView {
       
       firstButton.setTitle(buttonTitles![0], for: UIControlState())
       firstButton.addTarget(self, action: #selector(handleButton(_:)), for: .touchUpInside)
-      firstButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightRegular)
+      firstButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.regular)
       firstButton.tintColor = colorScheme
       firstButton.titleLabel?.adjustsFontSizeToFitWidth = true
       firstButton.titleLabel?.minimumScaleFactor = 0.8
@@ -417,7 +417,7 @@ open class FCAlertView: UIView {
       secondButton.backgroundColor = .white
       secondButton.setTitle(buttonTitles![1], for: UIControlState())
       secondButton.addTarget(self, action: #selector(handleButton(_:)), for: .touchUpInside)
-      secondButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightRegular)
+      secondButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.regular)
       secondButton.tintColor = colorScheme
       secondButton.titleLabel?.adjustsFontSizeToFitWidth = true
       secondButton.titleLabel?.minimumScaleFactor = 0.8
@@ -467,7 +467,7 @@ open class FCAlertView: UIView {
                                       height: 45)
         doneButton.setTitle(doneTitle, for: UIControlState())
         doneButton.addTarget(self, action: #selector(donePressed(_:)), for: .touchUpInside)
-        doneButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)
+        doneButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.medium)
         
         alertView!.addSubview(doneButton)
       }else {
@@ -599,7 +599,7 @@ open class FCAlertView: UIView {
   }
   
   // Dismissing AlertView
-  open func dismissAlertView() {
+    @objc open func dismissAlertView() {
     UIView.animate(withDuration: 0.175, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIViewAnimationOptions(), animations: {
       self.alpha = 0
       self.alertViewContents?.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
